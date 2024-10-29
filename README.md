@@ -1,2 +1,4 @@
-# blog-frontend
-The front end of a blog platform, connects to the repository blog-api made by Caduregel
+# React + Vite
+
+A blog, which connects to the following API:
+- [https://github.com/caduregel/blog-api]
