@@ -26,14 +26,17 @@ function Post() {
             }).catch((error) => setFetchError(error))
             .finally(() => setLoading(false));
     }, [])
-    
+
     console.log(postId)
     if (loading) return <p>Loading...</p>;
     if (fetchError) return <p>A network error was encountered</p>;
     if (!loading) {
         return (
             <>
-                {post.title}
+                <div>
+                    <h1> {post.title}</h1>
+                    <p>{post.content}</p>
+                </div>
             </>
         )
     }

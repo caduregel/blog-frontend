@@ -1,4 +1,26 @@
 .flex-row-container {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.grid-container-double {
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1.7fr 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.pages {
+    padding: 1.6rem;
+}
+
+.card-container {
+    padding: 4px;
+}
+
+.side-info {
+    padding: 1.6rem;
 }
