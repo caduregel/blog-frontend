@@ -12,6 +12,7 @@ function Post() {
     const [post, setPost] = useState(null)
     const [loading, setLoading] = useState(true)
     const [fetchError, setFetchError] = useState(null)
+
     const [showNewComment, setShowNewComment] = useState(false);
     const handleClose = () => setShowNewComment(false);
     const handleShow = () => setShowNewComment(true);
@@ -32,6 +33,16 @@ function Post() {
             }).catch((error) => setFetchError(error))
             .finally(() => setLoading(false));
     }, [])
+
+    const addComment = (comment) => {
+        const newPost = {
+            ...post,
+            comments: [...post.comments, comment]
+        }
+
+        setPost(newPost)
+    }
+
     if (loading) return <CoolSpinner />;
     if (fetchError) return <p>A network error was encountered</p>;
     if (!loading) {
@@ -42,7 +53,7 @@ function Post() {
                     <div className='tags'>
                         {post.tags.map((tag, index) => {
                             return (
-                                <div className='tag'   key={index}>
+                                <div className='tag' key={index}>
                                     <Badge bg="primary">{tag}</Badge>
                                 </div>
                             )
@@ -66,7 +77,7 @@ function Post() {
                             </div>
                         )
                     })}
-                    <NewComment show={showNewComment} handleClose={handleClose} postId={post._id}/>
+                    <NewComment show={showNewComment} handleClose={handleClose} addComment={addComment} postId={post._id} />
                 </div>
             </>
         )

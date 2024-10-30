@@ -9,6 +9,7 @@ function Posts() {
   const [posts, setPosts] = useState(null)
   const [loading, setLoading] = useState(true)
   const [fetchError, setFetchError] = useState(null)
+  
   const [filteredPosts, setFilteredPosts] = useState(null)
   const [searchParams] = useSearchParams(); 
   const searchTerm = searchParams.get("search") || "";

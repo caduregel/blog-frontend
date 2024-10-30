@@ -3,6 +3,8 @@ import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 // link
 const link = 'https://blog-api-production-530e.up.railway.app/api/comments/'
@@ -20,19 +22,21 @@ const checkUserAnon = (user) => {
     }
 }
 
-function NewComment({ show, handleClose, postId }) {
+function NewComment({ show, handleClose, postId, addComment }) {
     const [formUser, setFormUser] = useState('')
     const [formMessage, setFormMessage] = useState('')
+    const navigate = useNavigate();
 
-
-    const postComment = () => {
+    const postComment = async () => {
         const newComment = {
             user: checkUserAnon(formUser),
             message: formMessage
         }
-        console.log('firing?')
         axios.post(link + postId + '/new-comment', newComment, { headers })
+        handleClose()
+        addComment(newComment)
     }
+
 
     const handleUserChange = (event) => {
 
@@ -46,7 +50,7 @@ function NewComment({ show, handleClose, postId }) {
 
 
     return (
-        <div >
+        <div>
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Create a new comment!</Modal.Title>
@@ -67,7 +71,7 @@ function NewComment({ show, handleClose, postId }) {
                     <Button variant="secondary" onClick={handleClose}>
                         Cancle
                     </Button>
-                    <Button variant="primary" onClick={() => { handleClose(); postComment(); }}>
+                    <Button variant="primary" onClick={postComment}>
                         Post comment
                     </Button>
                 </Modal.Footer>
