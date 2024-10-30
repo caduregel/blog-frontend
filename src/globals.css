@@ -24,3 +24,19 @@
 .side-info {
     padding: 1.6rem;
 }
+
+.tag {
+    margin: 2px;
+}
+
+.tags {
+    display: flex;
+}
+
+.top-bottom-margin-12 {
+    margin: 16px 0px;
+}
+
+.new-comment-form {
+    padding: 12px;
+}

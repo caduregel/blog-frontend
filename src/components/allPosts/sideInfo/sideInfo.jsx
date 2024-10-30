@@ -1,8 +1,10 @@
+import SearchBox from "./searchBox"
 
 function SideInfo() {
     return (
         <div className="side-info">
-            <h1>Some info</h1>
+            <h1>Filters</h1>
+            <SearchBox />
         </div>
     )
 }

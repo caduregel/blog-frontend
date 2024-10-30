@@ -2,7 +2,6 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 function PostCard({ post }) {
-  console.log(post)
   const content = truncateString(post.content, 40)
   return (
     <div className='card-container'>

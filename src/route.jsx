@@ -3,6 +3,7 @@ import ErrorPage from "./pages/notFound";
 import Posts from './pages/allPosts'
 import { element } from "prop-types";
 import Post from "./pages/post";
+import About from "./pages/About";
 
 const routes = [
     {
@@ -10,8 +11,10 @@ const routes = [
         element: <App />,
         errorElement: <ErrorPage />,
         children: [
-            { path: "posts", element: <Posts /> },
+            { path: "/", element: <Posts /> },
+            { path: "/posts?", element: <Posts /> },
             { path: "posts/:postId", element: <Post />},
+            { path: "/about", element: <About /> }
 ]
   }
 ];
