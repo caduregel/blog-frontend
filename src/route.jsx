@@ -1,7 +1,6 @@
 import App from "./App";
 import ErrorPage from "./pages/notFound";
 import Posts from './pages/allPosts'
-import { element } from "prop-types";
 import Post from "./pages/post";
 import About from "./pages/About";
 
