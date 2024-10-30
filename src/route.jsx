@@ -1,8 +1,8 @@
-import App from "./App";
 import ErrorPage from "./pages/notFound";
 import Posts from './pages/allPosts'
 import Post from "./pages/post";
 import About from "./pages/About";
+import App from "./App.jsx";
 
 const routes = [
     {
