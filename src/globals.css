@@ -40,3 +40,11 @@
 .new-comment-form {
     padding: 12px;
 }
+
+@media only screen and (max-width: 800px) {
+    .grid-container-double {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+    }
+  }
