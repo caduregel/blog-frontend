@@ -2,7 +2,7 @@ import ErrorPage from "./pages/notFound";
 import Posts from './pages/allPosts'
 import Post from "./pages/post";
 import About from "./pages/About";
-import App from "./App.jsx";
+import App from "./App";
 
 const routes = [
     {
